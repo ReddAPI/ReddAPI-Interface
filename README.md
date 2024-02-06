@@ -39,7 +39,7 @@ python start.py
 wait a few minutes and the app will launch in your default browser
 
 ## How to use reddAPI interface
-Read **[ReddAPI-Interface-Docs.pdf](https://github.com/ReddAPI/ReddAPI-Interface/blob/main/ReddAPI-Interface-Docs.pdf)**
+Read **[ReddAPI-Interface-Docs.pdf](https://raw.githubusercontent.com/ReddAPI/ReddAPI-Interface/main/ReddAPI-Interface-Docs.pdf)**
 
 
 ## Community and Support
