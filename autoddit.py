@@ -4,9 +4,9 @@ import time
 from template import _error, clear_watermark
 
 def home_page():
-    clear_watermark.main(page_title="Autoddit")
+    clear_watermark.main(page_title="ReddAPI-Interface")
 
-    st.header("autoddit home page")
+    st.header("ReddAPI-Interface home page")
 
     bar = st.progress(0)
 
@@ -17,7 +17,7 @@ def home_page():
     if _error.check_api_key():
         st.success("No Issues found", icon="✅")
 
-    st.info(icon="ℹ️", body="Join our **[Telegram group](https://t.me/autoddit_support)** for Quick support tips & tricks and more ...")
+    st.info(icon="ℹ️", body="Join our **[Telegram group](https://t.me/ReddAPI_Interface_support)** for Quick support tips & tricks and more ...")
 
 if __name__ == "__main__":
     home_page()
