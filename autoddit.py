@@ -7,7 +7,6 @@ def home_page():
     clear_watermark.main(page_title="Autoddit")
 
     st.header("autoddit home page")
-    st.markdown("**you are using the free version**")
 
     bar = st.progress(0)
 
