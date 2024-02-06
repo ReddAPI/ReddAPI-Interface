@@ -25,8 +25,6 @@ def main():
             return
         
         lines = utils.read_file(file_path=file_path)
-        if not validators.validate_lines_num(lines=lines):
-            return _error.lines_error()
 
         bar = st.progress(0)
 
