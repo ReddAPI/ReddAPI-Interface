@@ -38,11 +38,11 @@ python start.py
 ```
 wait a few minutes and the app will launch in your default browser
 
-## How to use reddAPI interface
+# 2. How to use reddAPI interface
 Read **[ReddAPI-Interface-Docs.pdf](https://raw.githubusercontent.com/ReddAPI/ReddAPI-Interface/main/ReddAPI-Interface-Docs.pdf)**
 
 
-## Community and Support
+# 3. Community and Support
 ### Telegram Group
 
 Join our [Telegram Group](https://t.me/ReddAPI_Interface_support) for community discussions and support.
@@ -50,7 +50,7 @@ Join our [Telegram Group](https://t.me/ReddAPI_Interface_support) for community 
 **Disclaimers:** This is the only group officially managed by the ReddAPI-interface team. We do not endorse or manage any other groups that claim to be related to ReddAPI-interface.
 
 
-## Upcoming Features
+# 4. Upcoming Features
 
 Here are some exciting features that we are working on and planning to release in future updates:
 
