@@ -7,6 +7,10 @@ def read_file(file_path:str) -> list:
     with open(file_path, "r", encoding="utf-8") as f:
         return f.read().split("\n")
     
+def save_data(file_path:str, data:str):
+    with open(file_path, "a") as f:
+        f.write(data)
+    
 def get_X_rapid_api_key() -> str:
     config = configparser.ConfigParser()
     config.read('conf.ini')
