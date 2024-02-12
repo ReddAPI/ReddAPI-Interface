@@ -13,7 +13,7 @@ def main():
 
     post_url  = _input.input_template(label="The post url you wanna send downvotes to.")
     "The data in the TXT file should be organized like the following:"
-    "useragent:/proxy:/username:/password"
+    "useragent::proxy::username::password"
     
     file_path = _input.input_template(label="the txt file path that contains the accounts info.")
 
