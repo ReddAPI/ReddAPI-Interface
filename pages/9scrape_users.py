@@ -7,7 +7,7 @@ from src import utils
 
 
 def main():
-    clear_watermark.main(page_title="bulk upvote")
+    clear_watermark.main(page_title="scrape users")
     
     X_RapidAPI_Key = _error.check_api_key()
 
