@@ -52,6 +52,6 @@ def main():
                     success.success_to(action="DMed", username=username)
             
             except Exception as e:
-                st.error(body=e, icon="🚨")
+                _error.exception(e=e)
 
 main()

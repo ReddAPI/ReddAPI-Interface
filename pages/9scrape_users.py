@@ -20,23 +20,27 @@ def main():
         return
     
     if st.button("Submit"):
-        if not X_RapidAPI_Key:
-            "No API Found in 'conf.ini'"
-            return
+        try:
+            if not X_RapidAPI_Key:
+                "No API Found in 'conf.ini'"
+                return
+            
+            bar = st.progress(0)
+            comments = scrape_users_from_comments(
+                X_RapidAPI_Key=X_RapidAPI_Key,
+                post_url=post_url,
+                proxy=proxy
+            )
+
+            user_ids = []
+
+            for i, comment in enumerate(comments):
+                user_ids.append(comment["user_id"])
+                bar.progress((i + 1) / len(comments))
+
+            utils.save_data(file_path=file_path,data="\n".join(user_ids))
         
-        bar = st.progress(0)
-        comments = scrape_users_from_comments(
-            X_RapidAPI_Key=X_RapidAPI_Key,
-            post_url=post_url,
-            proxy=proxy
-        )
-
-        user_ids = []
-
-        for i, comment in enumerate(comments):
-            user_ids.append(comment["user_id"])
-            bar.progress((i + 1) / len(comments))
-
-        utils.save_data(file_path=file_path,data="\n".join(user_ids))
+        except Exception as e:
+            _error.exception(e=e)
 
 main()
