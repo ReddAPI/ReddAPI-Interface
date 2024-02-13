@@ -31,7 +31,7 @@ def runner(line:str, X_RapidAPI_Key:str):
 
 
 def run_multithreaded(lines:list, X_RapidAPI_Key:str):
-    with concurrent.futures.ThreadPoolExecutor(max_workers=len(lines)) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
         futures = [executor.submit(runner, line, X_RapidAPI_Key) for line in lines]
         concurrent.futures.wait(futures)
 

@@ -13,7 +13,6 @@ def runner(proxy:str, X_RapidAPI_Key:str):
         proxy=proxy,
         X_RapidAPI_Key=X_RapidAPI_Key
     )
-    print(res)
     if not res["success"]:
         utils.save_data(file_path="accounts.txt", data=f'{res["message"]} | reddit response: {res["reddit_response"]} |  reddit status code: {res["reddit_status_code"]}\n')
         return 
