@@ -53,5 +53,6 @@ def main():
             
             except Exception as e:
                 _error.exception(e=e)
+                continue
 
 main()

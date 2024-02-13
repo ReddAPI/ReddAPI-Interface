@@ -1,4 +1,6 @@
 import configparser
+import schedule
+import time 
 
 from interfaces._login import login
 
@@ -32,3 +34,12 @@ def core(callback, *args, **kwargs):
         bearer=res.json()["token_v2"],
         **kwargs
     )
+
+def run_scheduler(interval:int, time_unit:str, callback):
+    time_multiplier = {"Seconds": 1, "Minutes": 60, "Hours": 3600}
+
+    schedule.every(interval * time_multiplier[time_unit]).seconds.do(callback)
+
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
