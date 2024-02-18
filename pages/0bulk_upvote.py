@@ -2,8 +2,7 @@ import streamlit as st
 
 from template import _input, clear_watermark, _error, success
 from interfaces.upvote import upvote
-from src import validators
-from src import utils
+from src import validators, utils
 
 
 def main():
