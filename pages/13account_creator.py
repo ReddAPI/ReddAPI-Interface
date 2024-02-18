@@ -26,7 +26,7 @@ def run_multithreaded(proxies:list, X_RapidAPI_Key:str):
         concurrent.futures.wait(futures)
 
 def main():
-    clear_watermark.main(page_title="schudler for bulk posting to subreddits")
+    clear_watermark.main(page_title="bulk account creation")
     
     X_RapidAPI_Key = _error.check_api_key()
 
