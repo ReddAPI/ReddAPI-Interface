@@ -13,7 +13,7 @@ def flair_scraper(X_RapidAPI_Key:str,
     params = {
         "subreddit": str(subreddit),
         "proxy": str(proxy),
-        "cookies": urllib.parse.urlencode(cookies),
+        "cookies": cookies,
     }
     headers = {
         "content-type": "application/json",
