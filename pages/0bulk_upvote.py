@@ -58,4 +58,3 @@ def main():
                 _error.exception(e=e)
                 continue
 main()
-# /mnt/c/users/zakaria/onedrive/desktop/test.txt

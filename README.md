@@ -49,16 +49,25 @@ Join our [Telegram Group](https://t.me/ReddAPI_Interface_support) for community 
 
 **Disclaimers:** This is the only group officially managed by the ReddAPI-interface team. We do not endorse or manage any other groups that claim to be related to ReddAPI-interface.
 
+# 4. currunt features
+- Ability to schedule posts and comments for automated publishing.
+- Ability to mass DM people
+- User scraping functionality from subreddits for targeted interactions.
+- Mass posting
+- Mass follow / unfollow
+- Mass commenting
+- Mass upvotes / downvotes
+- Mass cross posting
+- flair scraper
+- users scraper
+- bulk join subreddit 
 
-# 4. Upcoming Features
+# 5. Upcoming Features
 
 Here are some exciting features that we are working on and planning to release in future updates:
 
 - Daily tips and tricks on how to efficiently bot Reddit, displaying on the home page.
-- Ability to schedule posts and comments for automated publishing.
 - Enhanced monitoring capabilities for subreddits, allowing automated comments based on certain requirements.
-- Ability to mass DM people for efficient communication.
-- User scraping functionality from subreddits for targeted interactions.
 - Automated karma farming on autopilot to boost your Reddit presence.
 - Monitoring your targeted keywords in a subreddit for proactive engagement.
 
