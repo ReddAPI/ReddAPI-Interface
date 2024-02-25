@@ -14,7 +14,7 @@ def runner(proxy:str, X_RapidAPI_Key:str):
         X_RapidAPI_Key=X_RapidAPI_Key
     )
     if not res["success"]:
-        utils.save_data(file_path="accounts.txt", data=f'{res["message"]} | reddit response: {res["reddit_response"]} |  reddit status code: {res["reddit_status_code"]}\n')
+        utils.save_data(file_path="ERRORS.txt", data=f'{res["message"]} | reddit response: {res["reddit_response"]} |  reddit status code: {res["reddit_status_code"]}\n')
         return 
     
     utils.save_data(file_path="accounts.txt", data=f'{res["email"]}::{res["username"]}::{res["password"]}\n')
@@ -47,6 +47,6 @@ def main():
         
         proxies = utils.read_file(file_path=file_path)
         run_multithreaded(proxies=proxies, X_RapidAPI_Key=X_RapidAPI_Key)
-        st.success("completed", icon="✅")
+        st.success("completed, SEE file 'accounts.txt'", icon="✅")
 
 main()
