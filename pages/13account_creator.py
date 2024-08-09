@@ -29,7 +29,7 @@ def main():
     clear_watermark.main(page_title="bulk account creation")
     
     X_RapidAPI_Key = _error.check_api_key()
-
+    _error.exception("The account creator hasn't worked since the last Reddit update (We are getting it to work again your patience is much appreciated)")
     st.header("accounts creator:")
 
     "The data in the TXT file should be organized like the following:"
