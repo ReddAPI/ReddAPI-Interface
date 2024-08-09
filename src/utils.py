@@ -30,6 +30,9 @@ def core(callback, *args, **kwargs):
         proxy=args[3],
         X_RapidAPI_Key=kwargs["X_RapidAPI_Key"]
     )
+    if res.status_code != 200:
+        raise ValueError(res.json()["detail"])
+
     return callback(
         bearer=res.json()["token_v2"],
         **kwargs
