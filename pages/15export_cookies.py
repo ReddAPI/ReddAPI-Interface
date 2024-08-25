@@ -81,5 +81,4 @@ def main():
             st.error(f"Failed to export cookies for {len(failed_accounts)} account(s):")
             st.text("\n".join(failed_accounts))
 
-
 main()
