@@ -74,6 +74,13 @@ def main():
                 _error.exception(f"An error occurred while processing cookies for {username}: {e}")
                 continue
         
+
+        st.success(f"Successfully exported cookies for {len(successful_accounts)} account(s).")
+        if failed_accounts:
+            st.error(f"Failed to export cookies for {len(failed_accounts)} account(s):")
+            for failed_acc in failed_accounts:
+                st.text(failed_acc)
+                
         st.success("Completed successfully", icon="✅")
 
 main()
