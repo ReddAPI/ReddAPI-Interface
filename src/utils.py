@@ -12,6 +12,16 @@ def read_file(file_path:str) -> list:
 def save_data(file_path:str, data:str):
     with open(file_path, "a") as f:
         f.write(data)
+
+def format_cookie(cookie:dict) -> str:
+    domain = cookie['domain']
+    secure = "TRUE" if cookie['secure'] else "FALSE"
+    path = cookie['path']
+    session = "TRUE" if cookie['session'] else "FALSE"
+    expires = int(cookie['expires'])
+    name = cookie['name']
+    value = cookie['value']   
+    return f"{domain}    {secure}    {path}    {session}    {expires}    {name}    {value}"
     
 def get_X_rapid_api_key() -> str:
     config = configparser.ConfigParser()
