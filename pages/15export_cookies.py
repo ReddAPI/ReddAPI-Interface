@@ -39,48 +39,48 @@ def main():
         successful_accounts = []
 
         for acc in accs:
-            try:
-                username, password, proxy = acc.split("::")
-            except ValueError:
-                _error.exception(f"Invalid account format in line: {acc}")
-                failed_accounts.append(acc)
-                continue
-            
-            response = login(
-                username=username,
-                password=password,
-                useragent="",
-                proxy=proxy,
-                X_RapidAPI_Key=X_RapidAPI_Key
-            )
-            
-            if response.status_code != 200:
-                _error.failed_to("export cookies", username=username, res=response.text)
-                failed_accounts.append(acc)
-                continue
-            
-            try:
-                cookies_output = [
-                    utils.format_cookie(cookie=cookie)
-                for cookie in response.json()["cookies"]
-                ]
+            with st.spinner(f"Processing account: **{acc[:20]}**..."):
+                try:
+                    username, password, proxy = acc.split("::")
+                except ValueError:
+                    _error.exception(f"Invalid account format in line: {acc}")
+                    failed_accounts.append(acc)
+                    continue
                 
-                output_file_path = os.path.join(output_folder_path, f"{username}.txt")
-                utils.save_data(output_file_path, data="\n".join(cookies_output))
-                successful_accounts.append(username)
-                st.info(f"Cookies exported successfully for user: {username}")
-            except Exception as e:
-                failed_accounts.append(acc)
-                _error.exception(f"An error occurred while processing cookies for {username}: {e}")
-                continue
+                response = login(
+                    username=username,
+                    password=password,
+                    useragent="",
+                    proxy=proxy,
+                    X_RapidAPI_Key=X_RapidAPI_Key
+                )
+                
+                if response.status_code != 200:
+                    _error.failed_to("export cookies", username=username, res=response.text)
+                    failed_accounts.append(acc)
+                    continue
+                
+                try:
+                    cookies_output = [
+                        utils.format_cookie(cookie=cookie)
+                    for cookie in response.json()["cookies"]
+                    ]
+                    
+                    output_file_path = os.path.join(output_folder_path, f"{username}.txt")
+                    utils.save_data(output_file_path, data="\n".join(cookies_output))
+                    successful_accounts.append(username)
+                    st.info(f"Cookies exported successfully for user: {username}")
+                except Exception as e:
+                    failed_accounts.append(acc)
+                    _error.exception(f"An error occurred while processing cookies for {username}: {e}")
+                    continue
         
-
-        st.success(f"Successfully exported cookies for {len(successful_accounts)} account(s).")
+        if successful_accounts:
+            st.success(f"Successfully exported cookies for {len(successful_accounts)} account(s).")
         if failed_accounts:
             st.error(f"Failed to export cookies for {len(failed_accounts)} account(s):")
             for failed_acc in failed_accounts:
                 st.text(failed_acc)
-                
-        st.success("Completed successfully", icon="✅")
+
 
 main()
